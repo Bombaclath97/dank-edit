@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """Video: sprite dallo screenshot, compositing in float, testi, effetti, render via ffmpeg.
 Tutti i frame sono np.float32 (H, W, 3) in 0..255; si fa clip solo alla scrittura."""
 import glob

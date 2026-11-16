@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """Basi audio: filtri, saturazione, cache, note, timeline a bus con export."""
 import json
 import os

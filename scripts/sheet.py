@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """Foglio di controllo: frame del video ai tempi dati, con l'etichetta del tempo.
 
 uso: sheet.py VIDEO.mp4 OUT.png 1.0 3.5 7.2 ...   (oppure --every 2.0)

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 # Controlla tutto quello che serve a dank-edit e, se manca qualcosa,
 # stampa i comandi d'installazione per la distro corrente.
 # Uscita: 0 = pronto, 1 = manca qualcosa di obbligatorio.

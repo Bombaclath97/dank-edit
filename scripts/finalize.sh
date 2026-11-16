@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 # Consegna: comprime il master (crf 23), copia video + wav nella cartella d'uscita,
 # verifica la copia con md5.  uso: finalize.sh LAVORO_DIR NOME_FINALE
 set -euo pipefail

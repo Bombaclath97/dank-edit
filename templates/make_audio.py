@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """TEMPLATE audio. Copialo nella cartella di lavoro e riscrivi COMPOSIZIONE.
 uso: $PY make_audio.py WORK_DIR
 Struttura tipica: intro (2) -> build (2) -> DROP (4) -> break (2) -> DROP 2 (4) -> fine (1).

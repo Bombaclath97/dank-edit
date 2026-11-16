@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """Analizza uno screenshot di chat (dark mode): avatar, righe di testo, parole.
 
 uso: segment.py IMMAGINE [--out DIR]

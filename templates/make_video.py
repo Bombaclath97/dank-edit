@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """TEMPLATE video. Copialo nella cartella di lavoro, metti le coordinate prese da
 segment.py, scrivi le scene.
 uso:  $PY make_video.py WORK_DIR IMMAGINE --test   # foglio con un frame per scena + controllo testi

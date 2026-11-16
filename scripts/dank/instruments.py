@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Bombaclath97 - https://github.com/Bombaclath97/dank-edit
 """Strumenti sintetizzati da zero (niente sample). Tutti restituiscono np.array mono.
 Raccolti dagli edit fatti finora: ogni funzione e' gia' stata usata in un render vero."""
 import numpy as np

@@ -12,18 +12,25 @@ chat) in un **video meme "dank"**: 1280×720, 60 fps, ~25–30 secondi.
 
 ## Installazione
 
+Una riga:
+
 ```bash
-git clone https://github.com/Bombaclath97/dank-edit ~/.claude/skills/dank-edit
-~/.claude/skills/dank-edit/scripts/check_env.sh
+curl -fsSL https://raw.githubusercontent.com/Bombaclath97/dank-edit/main/install.sh | bash
 ```
 
-`check_env.sh` controlla Python + librerie, ffmpeg, espeak-ng e font, e se manca qualcosa stampa i comandi per la
-tua distro (apt / dnf / pacman / zypper / apk). Su Debian/Ubuntu:
+Clona la skill in `~/.claude/skills/dank-edit`, crea un venv con le librerie Python se servono (senza sudo),
+controlla l'ambiente e fa il collaudo. Se mancano pacchetti di sistema (espeak-ng, ffmpeg, font) ti stampa i
+comandi per la tua distro; per installarli direttamente aggiungi `--with-system-deps` (usa sudo):
 
 ```bash
-sudo apt update && sudo apt install -y python3-venv espeak-ng ffmpeg fonts-dejavu-core
-python3 -m venv ~/.local/share/dank-edit/venv
-~/.local/share/dank-edit/venv/bin/pip install numpy scipy opencv-python-headless pillow mido imageio-ffmpeg
+curl -fsSL https://raw.githubusercontent.com/Bombaclath97/dank-edit/main/install.sh | bash -s -- --with-system-deps
+```
+
+Rilanciare lo stesso comando aggiorna la skill. A mano:
+
+```bash
+git clone https://github.com/Bombaclath97/dank-edit ~/.claude/skills/dank-edit
+~/.claude/skills/dank-edit/scripts/check_env.sh     # report + comandi d'installazione per distro
 ```
 
 Su WSL il video finito viene copiato nei Download di Windows; altrove in `~/Downloads`
@@ -44,9 +51,17 @@ oppure semplicemente *"nuovo edit da 9.png"*. Un render completo richiede 5–13
 | percorso | cosa |
 |---|---|
 | `SKILL.md` | flusso di lavoro e regole che Claude segue |
+| `install.sh` | installer da una riga |
+| `AGENTS.md` | come installare, usare e modificare la skill, per agent di coding |
 | `scripts/check_env.sh` | controllo dipendenze + comandi d'installazione per distro |
+| `scripts/selftest.py` | collaudo di tutta la libreria (~5 s) |
 | `scripts/segment.py` | analisi dello screenshot: avatar, righe, parole (esclude la sottolineatura dei link) |
 | `scripts/sheet.py` | foglio di controllo con i frame del video |
 | `scripts/finalize.sh` | compressione, copia nella cartella d'uscita, verifica md5 |
 | `scripts/dank/` | libreria: sintesi (`instruments`), voci (`voice`), MIDI PD (`midi`), mix (`core`), video (`video`) |
 | `templates/` | edit minimo audio + video da cui partire |
+
+## Licenza
+
+[AGPL-3.0-or-later](LICENSE). Puoi usare, modificare e ridistribuire; se distribuisci una versione modificata
+(anche offrendola come servizio in rete) devi pubblicarne il sorgente con la stessa licenza.
