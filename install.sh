@@ -90,8 +90,17 @@ else
     fi
     echo "creo il venv $VENV con $BASE"
     mkdir -p "$(dirname "$VENV")"
-    if ! "$BASE" -m venv "$VENV"; then
-        echo "ERRORE: venv non disponibile. Su Debian/Ubuntu: $SUDO apt-get install -y python3-venv" >&2; exit 1
+    if ! "$BASE" -m venv "$VENV" >/dev/null 2>&1; then
+        # Debian/Ubuntu senza python3-venv: niente ensurepip. Venv senza pip + get-pip.py ufficiale, niente sudo.
+        rm -rf "$VENV"
+        echo "ensurepip non disponibile: venv senza pip + get-pip.py"
+        if ! { "$BASE" -m venv --without-pip "$VENV" &&
+               curl -fsSL https://bootstrap.pypa.io/get-pip.py | "$VENV/bin/python" - -q; }; then
+            rm -rf "$VENV"
+            PYV="$("$BASE" -c 'import sys; print(f"{sys.version_info[0]}.{sys.version_info[1]}")')"
+            echo "ERRORE: impossibile creare il venv. Su Debian/Ubuntu: $SUDO apt-get install -y python${PYV}-venv" >&2
+            exit 1
+        fi
     fi
     "$VENV/bin/python" -m pip install -q --upgrade pip
     "$VENV/bin/python" -m pip install -q $PIP_PKGS
